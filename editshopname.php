@@ -1,0 +1,163 @@
+<?php
+  //start session
+  session_start();
+
+  //database connection
+  require 'databaseconnection.php';
+  
+  //check users log
+  if (!isset($_SESSION['userEmailSession'])) {
+    //redirect the user
+    header("location: index.php");
+  }
+
+  //empty variable
+  $errorMsg = $successmsg = "";
+  if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    //get user input
+    $shopname = $_POST["shopname"];
+    if (empty($shopname) || ctype_space($shopname) || is_numeric($shopname) || !preg_match("/^[A-Z\d ]+$/i", $shopname)) {
+      //throw error
+      $errorMsg = "only letters and white space characters allowed.";
+    }else {
+      //get userkey
+      $userkey = $_SESSION['userkeyid'];
+      $check = "SELECT * FROM shop WHERE userkey='$userkey'";
+      $checkdb = mysqli_query($connection, $check);
+      if (!$checkdb) {
+        $errorMsg = "ops..";
+      }else {
+        if (mysqli_num_rows($checkdb) < 1) {
+          $errorMsg = "Your do not have any shop.";
+        }else {
+          $update = "UPDATE shop SET shopname='$shopname' WHERE userkey='$userkey'";
+          if (!mysqli_query($connection, $update)) {
+            $errorMsg = "Can not change name try again later.";
+          }else {
+            $successmsg = "Shop name changed.";
+          }
+        }
+      }
+    }
+  }
+
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SNNMGSNC57"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-SNNMGSNC57');
+    </script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit your Shop</title>
+    <link href="assets/img/logoweyla.jpg" rel="icon">
+
+    <!-- <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon"> -->
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <link href="assets/css/style.css" rel="stylesheet">
+    <style>    
+      /* .inputholder{
+      } */
+      #textinput{
+          border: 2px solid #0a2c3d;
+          padding: 0.7rem;
+      }
+      .mybtn{
+        background: #0a2c3d;
+        padding: 0.7rem;
+        color: white;
+        border: 2px solid #0a2c3d;
+        margin-left: -1%;
+      }
+      label{
+          font-weight: bold;
+      }
+    </style>
+</head>
+<body>
+    <div class="row headerlogoholder">
+      <div class="col m-4">
+          <p class="fw-bold text-light">Shopweyla <i class="bx bxl-dribbble"></i></p>
+      </div>
+    </div>
+
+    <section class="breadcrumbs mt-5">
+      <div class="container">
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Edit Your Shop</h2>
+          <ol>
+            <li><a href="chooseEditlink.php">Back</a></li>
+            <li>Your shop</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <div class="row bg-light mt-5">
+      <div class="col-1 col-md-2"></div>
+      <div class="col mb-5">        
+        <form action="<?php  echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" class="pt-4">
+          <label for="">Change Your Shop Name</label>
+          <div class="inputholder">
+            <input type="text" name="shopname" placeholder="Enter New Name" id="textinput">
+            <button class="mybtn">Update
+              <i class="bi bi-send"></i>
+            </button> 
+          </div>
+          <span class="text-danger fw-bold">
+            <?php echo $errorMsg; ?>
+          </span>
+          <span class="text-success fw-bold">
+            <?php echo $successmsg; ?>
+          </span>
+        </form>     
+      </div>
+      <div class="col-1 col-md-2"></div>
+    </div>
+
+    <br><br>
+
+    <!-- ======= Footer ======= -->
+    <?php
+        include "footer.html";
+    ?>
+    <!-- End Footer -->
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    <script src="assets/vendor/purecounter/purecounter.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+
+    <script src="assets/js/main.js"></script>
+
+    <script src="jquery/jquery-3.6.0.js"></script>
+    <script src="jquery/jqueryCodeApp.js"></script>
+    
+</body>
+</html>

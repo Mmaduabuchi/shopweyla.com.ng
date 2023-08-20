@@ -1,0 +1,40 @@
+.menuContainer{
+    background-color: #0a2c3d;
+    padding: 3rem;
+    color: white;
+    font-weight: bold;
+    border-radius: 0.6rem;
+    margin: 0% 3% 3% 0%;
+}
+:hover .menuContainer , .menuContainerDELETE{
+    cursor: pointer;
+}
+.menuContainerDELETE{
+    background-color: red;
+    padding: 2.5rem;
+    color: white;
+    font-weight: bold;
+    border-radius: 0.6rem;
+    margin: 0% 3% 3% 0%;
+}
+.boardDiv{
+    background-color: #a9e9bc;
+}
+th{
+    width: 20%;
+}
+.deferChangeText{
+    background-color: #0a2c3d;
+    color: white;
+}
+.btnBackPage{ 
+    border: solid #0a2c3d;
+    background-color: #0a2c3d;
+    color: white;
+    padding: 0.8rem;
+    border-radius: 0.5rem;
+    width: 35%;
+}
+.icon{
+    font-size: 30px;
+}

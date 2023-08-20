@@ -1,0 +1,19 @@
+body .signupbtn{
+    border: 2px solid red;
+    background-color: #0a2c3d;
+    color: white;
+    font-size: 12px;
+    border-radius: 0.5rem;
+  }
+  .signinbtn{
+    border: 2px solid white;
+    color: white;
+    border-radius: 0.5rem;
+    font-size: 12px;
+  }
+  /* .btncontainer{
+    margin: 5rem;
+    padding: 5rem 2rem 2rem 2rem;
+    height: 200px;
+    box-shadow: 2px 2px 8px 4px #cfd2d3;
+} */
