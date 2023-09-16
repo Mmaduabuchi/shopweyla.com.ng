@@ -125,7 +125,7 @@
     <meta content="" name="keywords">
 
     <!-- Favicons -->
-    <link href="assets/img/logoweyla.jpg" rel="icon">
+    <link href="assets/img/logoweyla.png" rel="icon">
     <!-- <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon"> -->
 
     <!-- Google Fonts -->
@@ -143,24 +143,29 @@
     <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet">
     <style>
-        #signupImageLogo{
-          width: 40%;
+        #formcontainer{
+          border-top: 6px solid grey;
+        
+        }
+        #userinput{
+          border: none;
+          background-color: rgb(252, 251, 250);
+          padding: 0.5rem;
+          margin-left: 0%;
         }
     </style>
 </head>
 <body class="signinbodypage">
     <div class="row">
-        <div class="col-1 col-md-2"></div>
+        <div class="col-1 col-md-3"></div>
         <div class="col mt-5">
             <div class="row">
-                <div class="col-12 text-center">
-                    <img src="assets/img/logoweyla.png" alt="site logo" id="signupImageLogo">
-                </div>
                 <div class="col">
+                    <h5 class="text-center loginText fw-bold">Shopweyla.com.ng</h5>
                     <h5 class="text-center loginText fw-bold">Yap! Kindly Register below...</h5>
                     <br><br>
                     <span class="text-center fw-bold text-light">REGISTER HERE</span>
-                    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" class="text-center" name="form" id="fromcontainer" method="post">
+                    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" class="text-center" name="form" id="formcontainer" method="post">
                         <span class="text-success fw-bold">
                             <?php
                                 echo $success;
@@ -171,39 +176,36 @@
                                 echo $usernameErr;
                             ?>
                         </span>
-                        <input type="text" name="username" placeholder="First Name" id="userinput" class="p-3 p-lg-4 signinput" required>
-                        <br>
+                        <input type="text" name="username" placeholder="First Name" id="userinput" class="p-3 w-100 signinput" required>
                         <span class="text-danger">
                             <?php
                                 echo $middlenameErr;
                             ?>
                         </span>
-                        <input type="text" name="middlename" placeholder="Last Name" id="userinput" class="p-3 p-lg-4 signinput" required>
-                        <br>
+                        <input type="text" name="middlename" placeholder="Last Name" id="userinput" class="p-3 w-100 signinput" required>
                         <span class="text-danger">
                             <?php
                                 echo $phoneNumberErr;
                             ?>
                         </span>
-                        <input type="tel" name="phone" placeholder="Phone" id="userinput" maxlength="15" class="p-3 p-lg-4 signinput" required>
-                        <br>
+                        <input type="tel" name="phone" placeholder="Phone" id="userinput" maxlength="15" class="p-3 w-100 signinput" required>
                         <span class="text-danger">
                             <?php
                                 echo $UserEmailErr;
                             ?>
                         </span>
-                        <input type="email" name="email" placeholder="Email" id="userinput" class="p-3 p-lg-4 signinput" required>
-                        <br>
+                        <input type="email" name="email" placeholder="Email" id="userinput" class="p-3 w-100 signinput" required>
                         <span class="text-danger">
                             <?php
                                 echo $countryErr;
                             ?>
                         </span>
-                        <select name="country" id="userinput" class="p-3 p-lg-4 signinput">
+                        <select name="country" id="userinput" class="p-3 w-100 signinput">
                             <option value="Nigeria">Nigeria</option>
                             <option value="Ghana">Ghana</option>
                             <option value="Cameroon">Cameroon</option>
                             <option value="Togo">Togo</option>
+                            <option value="Rwanda">Rwanda</option>
                             <option value="South Africa">South Africa</option>
                             <option value="Morocco">Morocco</option>
                             <option value="Kenya">Kenya</option>
@@ -219,7 +221,7 @@
                             <option value="Congo">Democratic Republic of Congo</option>
                             <option value="Mali">Mali</option>
                             <option value="Madagascar">Madagascar</option>
-                            <option value="Bukina Faso">Bukina Faso</option>
+                            <option value="Bukina_Faso">Bukina Faso</option>
                             <option value="Mozambique">Mozambique</option>
                             <option value="Sierra Leone">Sierra Leone</option>
                             <option value="Burundi">Burundi</option>
@@ -233,15 +235,13 @@
                                 echo $passwordErr;
                             ?>
                         </span>
-                        <input type="password" name="password" placeholder="Password" id="userinput" class="p-3 p-lg-4 signinput" required>
-                        <br>
+                        <input type="password" name="password" placeholder="Password" id="userinput" class="p-3 w-100 signinput" required>
                         <span class="text-danger">
                             <?php
                                 echo $confirmPasswordErr;
                             ?>
                         </span>
-                        <input type="password" name="confirmPasswrd" placeholder="Confirm Password" id="userinput" class="p-3 p-lg-4 signinput" required>
-                        <br>
+                        <input type="password" name="confirmPasswrd" placeholder="Confirm Password" id="userinput" class="p-3 w-100 signinput" required>
                         <div class="row">
                             <div class="col fw-bold text-light">
                             <span class="text-danger">
@@ -257,7 +257,7 @@
                         <br>
                         <div class="row">
                             <div class="col text-center">
-                                <button type="submit" class="btn signupbtn p-3 p-lg-4 w-100">REGISTER <i class="bx bxl-dribbble"></i></button>
+                                <button type="submit" class="btn signupbtn p-3 w-100">REGISTER <i class="bx bxl-dribbble"></i></button>
                             </div>
                         </div>                                
                         <div class="text-center loginText fw-bold">
@@ -267,7 +267,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-1 col-md-2"></div>
+        <div class="col-1 col-md-3"></div>
     </div>
 
 

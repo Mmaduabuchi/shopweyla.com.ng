@@ -88,7 +88,7 @@
     <meta content="" name="keywords">
 
     <!-- Favicons -->
-    <link href="assets/img/logoweyla.jpg" rel="icon">
+    <link href="assets/img/logoweyla.png" rel="icon">
     <!-- <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon"> -->
 
     <!-- Google Fonts -->
@@ -109,54 +109,50 @@
 </head>
 <body class="loginBodyPage">
     <div class="row">
-        <div class="col-1 col-md-2"></div>
+        <div class="col-1 col-md-3"></div>
         <div class="col mt-5">
             <div class="row">
+                <div class="col-12"></div>
                 <div class="col">
-                    <div class="row">
-                        <div class="col-12"></div>
-                        <div class="col">
-                            <h3 class="text-center loginText fw-bold">Shopweyla.com.ng</h3>
-                            <h5 class="text-center loginText fw-bold">Yap! Kindly Login below...</h5>
-                            <br><br>
-                            <span class="text-center fw-bold text-light">LOGIN HERE</span>
-                            <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" name="form" id="fromcontainer" method="post">
-                                <br>
-                                <span class="text-danger">
-                                    <?php
-                                        echo $errMsg;
-                                    ?>
-                                </span>
-                                <div class="inputHolder">
-                                    <i class="bx bx-mail-send bxicon"></i>                                    
-                                    <input type="email" name="email" placeholder="Email" id="userinput" class="p-3 p-lg-4">
-                                </div>
-                                <div class="inputHolder">
-                                   <i class="bx bxs-key bxicon"></i>                                    
-                                   <input type="password" name="password" placeholder="Password" id="userinput" class="p-3 p-lg-4">
-                                </div>
-                                <br>
-                                <div class="text-center fw-bold">
-                                    <a href="resetpassword.php" id="forgotText">
-                                        <p>Forgotten Password?</p>
-                                    </a>
-                                </div>
-                                <div class="row">
-                                    <div class="col text-center">
-                                        <button type="submit" class="btn signupbtn p-3 p-lg-3 w-100 fw-lg-bold">LOGIN <i class="bx bxl-dribbble"></i></button>
-                                    </div>
-                                </div>                                
-                                <div class="text-center loginText fw-bold">
-                                    <p>Don't have an account? <a href="signup.php" class="registerlink">Register</a> </p>
-                                </div> 
-                            </form>
+                    <h3 class="text-center loginText fw-bold">Shopweyla.com.ng</h3>
+                    <h5 class="text-center loginText fw-bold">Yap! Kindly Login below...</h5>
+                    <br><br>
+                    <span class="text-center fw-bold text-light">LOGIN HERE</span>
+                    <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" name="form" id="fromcontainer" method="post">
+                        <br>
+                        <span class="text-danger">
+                            <?php
+                                echo $errMsg;
+                            ?>
+                        </span>
+                        <div class="inputHolder">
+                            <i class="bx bx-mail-send bxicon"></i>                                    
+                            <input type="email" name="email" placeholder="Email" id="userinput" class="p-3 p-lg-4">
                         </div>
-                        <div class="col-12"></div>
-                    </div>                    
+                        <div class="inputHolder">
+                           <i class="bx bxs-key bxicon"></i>                                    
+                           <input type="password" name="password" placeholder="Password" id="userinput" class="p-3 p-lg-4">
+                        </div>
+                        <br>
+                        <div class="text-center fw-bold">
+                            <a href="resetpassword.php" id="forgotText">
+                                <p>Forgotten Password?</p>
+                            </a>
+                        </div>
+                        <div class="row">
+                            <div class="col text-center">
+                                <button type="submit" class="btn signupbtn p-3 p-lg-3 w-100 fw-lg-bold">LOGIN <i class="bx bxl-dribbble"></i></button>
+                            </div>
+                        </div>                                
+                        <div class="text-center loginText fw-bold">
+                            <p>Don't have an account? <a href="signup.php" class="registerlink">Register</a> </p>
+                        </div> 
+                    </form>
                 </div>
+                <div class="col-12"></div>
             </div>            
         </div>
-        <div class="col-1 col-md-2"></div>
+        <div class="col-1 col-md-3"></div>
     </div>
 
     <br><br><br><br>

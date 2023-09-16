@@ -1,13 +1,4 @@
-/**
-* Template Name: Moderna - v4.8.0
-* Template URL: https://bootstrapmade.com/free-bootstrap-template-corporate-moderna/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
 
-/*--------------------------------------------------------------
-# General
---------------------------------------------------------------*/
 body {
   font-family: "Open Sans", sans-serif;
   color: #444;
@@ -2023,12 +2014,6 @@ section {
   border-radius: 0.2rem;
   background-color: rgb(253, 253, 253);
 }
-#userinput{
-  border: none;
-  width: 80%;
-  background-color: rgb(252, 251, 250);
-  padding: 0.5rem;
-}
 .loginText{
   color: #f6f7f8;
 }
@@ -2040,10 +2025,6 @@ section {
 }
 #logoutBtn{
   display: none;
-}
-#fromcontainer{
-  border-top: 6px solid grey;
-
 }
 .bxicon{
   font-size: xx-large;
